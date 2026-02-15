@@ -1,0 +1,7 @@
+@theme {
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-hero: "Pirata One", "Old English Text MT", serif;
+
+  --color-bg: #000;
+  --color-text: #f4f4f5;
+}
