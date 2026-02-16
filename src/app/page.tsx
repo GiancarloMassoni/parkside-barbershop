@@ -5,10 +5,17 @@ import { ScissorsIcon } from "@/components/icons/Scissors";
 import { RazorIcon } from "@/components/icons/Razor";
 import { BeardIcon } from "@/components/icons/Beard";
 import { KidsIcon } from "@/components/icons/Kids";
+import exteriorImg from "../../public/barbershop-outside.jpg";
+import { LocationPin } from "@/components/icons/LocationPin";
+import BookNowCTA from "@/components/BookNowCTA";
 
 function AboveTheFold() {
   return (
-    <section className="relative w-full min-h-[90vh] lg:min-h-[100vh] overflow-hidden">
+    <section
+      className="relative w-full min-h-[80vh] 
+    lg:max-h-50
+    overflow-hidden"
+    >
       {/* Background image */}
       <Image
         src={watertower}
@@ -48,33 +55,32 @@ function AboveTheFold() {
       />
 
       {/* Content */}
-      <div className="relative z-30 mx-auto flex min-h-[90vh] lg:min-h-screen max-w-7xl items-center px-6 lg:px-8">
-        <div className="max-w-xl">
-          <h1 className="font-hero text-6xl md:text-8xl mb-4 text-zinc-100 drop-shadow-[0_6px_24px_rgba(0,0,0,0.75)]">
+      <div className="relative z-30 min-h-[90vh] max-w-7xl mx-auto px-6 lg:px-8 flex items-center">
+        <div className="max-w-xl -translate-y-8 lg:-translate-y-28 lg:translate-x-28">
+          <h1 className="font-hero text-6xl md:text-8xl mb-2 text-zinc-100 drop-shadow-[0_6px_24px_rgba(0,0,0,0.75)]">
             Park Side
           </h1>
           <h2 className="font-hero text-4xl md:text-6xl mb-10 text-zinc-100 drop-shadow-[0_6px_24px_rgba(0,0,0,0.75)]">
             Barbershop
           </h2>
 
-          <Link
-            href="/booking"
+          <BookNowCTA
             className="
               group relative inline-flex items-center gap-2
               rounded-md border border-white/40
-              bg-gradient-to-b from-zinc-200 to-zinc-400
+              bg-linear-to-b from-zinc-200 to-zinc-400
               px-8 py-4
               text-sm font-semibold uppercase tracking-widest text-black
               shadow-[0_6px_20px_rgba(0,0,0,0.4)]
               transition-all duration-300
               hover:from-white hover:to-zinc-300
               hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]
-              active:translate-y-[1px]
+              active:translate-y-px
               font-body
+              hover:cursor-pointer
             "
-          >
-            Book Now
-          </Link>
+            text="Book Now"
+          />
         </div>
       </div>
     </section>
@@ -105,7 +111,17 @@ function TrustBar() {
             <span className="hidden sm:inline text-white/15">|</span>
             <span>Open Mon-Sun</span>
             <span className="hidden sm:inline text-white/15">|</span>
-            <span>Located at 119 Bradford Ave #C, Placentia, CA 92870</span>
+            <span>
+              <Link
+                href="https://www.google.com/maps?q=119+Bradford+Ave+%23C,+Placentia,+CA+92870"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center hover:text-white transition gap-1"
+              >
+                <LocationPin className="h-4 w-4 text-zinc-200/80" />
+                <span>119 Bradford Ave #C, Placentia, CA 92870</span>
+              </Link>
+            </span>
           </div>
 
           <a
@@ -185,12 +201,103 @@ function Services() {
                   {service.desc}
                 </p>
 
-                <button className="mt-6 text-xs uppercase tracking-widest text-zinc-200 hover:text-white">
-                  Book →
-                </button>
+                <BookNowCTA
+                  className="mt-6 text-xs uppercase tracking-widest text-zinc-200 hover:text-white hover:cursor-pointer"
+                  text="Book →"
+                />
               </div>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Exterior() {
+  return (
+    <section className="relative bg-[#0e0e0e] py-24 overflow-hidden">
+      {/* Subtle grain for continuity */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 opacity-[0.035]"
+        style={{
+          backgroundImage: "url(/grain.png)",
+          backgroundRepeat: "repeat",
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-14 lg:grid-cols-2">
+          {/* Image */}
+          <div className="relative">
+            <div className="relative aspect-16/14 overflow-hidden rounded-xl border border-white/10 bg-black/40">
+              <Image
+                src={exteriorImg}
+                alt="Park Side Barbershop exterior in Placentia"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+
+              {/* Image overlays for brand consistency */}
+              <div
+                aria-hidden
+                className="absolute inset-0"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.05))",
+                }}
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 opacity-[0.05]"
+                style={{
+                  backgroundImage: "url(/grain.png)",
+                  backgroundRepeat: "repeat",
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Text */}
+          <div>
+            <p className="mb-4 text-xs uppercase tracking-widest text-zinc-200/80">
+              Visit the Shop
+            </p>
+
+            <h2 className="mb-2 text-4xl font-semibold tracking-wide text-zinc-100">
+              Right here in Placentia
+            </h2>
+            <Link
+              href="https://www.google.com/maps?q=119+Bradford+Ave+%23C,+Placentia,+CA+92870"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm text-zinc-300 hover:text-white transition mb-6"
+            >
+              <LocationPin className="h-5 w-5 text-zinc-200/80" />
+              <span>119 Bradford Ave #C, Placentia, CA 92870</span>
+            </Link>
+            <p className="mb-6 text-base leading-relaxed text-zinc-400">
+              Park Side Barbershop is proudly located in the heart of Placentia.
+              Easy to find, easy to walk into, and built to feel like a true
+              neighborhood shop. Whether you’re a regular or stopping in for the
+              first time, the door’s always open.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-6">
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/10 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-zinc-100 backdrop-blur transition hover:bg-white/15 hover:border-white/30"
+              >
+                Get Directions
+              </a>
+
+              <span className="text-xs uppercase tracking-widest text-zinc-400">
+                Walk-ins Welcome
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -327,6 +434,7 @@ export default function Home() {
     <>
       <AboveTheFold />
       <TrustBar />
+      <Exterior />
       <Services />
       <AboutUs />
     </>
