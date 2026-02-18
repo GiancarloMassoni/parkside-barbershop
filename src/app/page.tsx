@@ -395,7 +395,7 @@ function AboutUs() {
 
           {/* Image */}
           <div className="relative">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl border border-white/10 bg-black/40">
+            <div className="relative aspect-4/5 w-full overflow-hidden rounded-xl border border-white/10 bg-black/40">
               {/* <Image
                 src={founderImg}
                 alt="Founder of Park Side Barbershop"
