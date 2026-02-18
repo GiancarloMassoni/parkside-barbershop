@@ -22,7 +22,7 @@ function AboveTheFold() {
         alt="Water Tower"
         fill
         priority
-        className="object-cover opacity-60 object-[70%_75%]"
+        className="object-cover opacity-60 object-[70%_50%]"
       />
 
       {/* Light control overlays (gradient + vignette) */}
