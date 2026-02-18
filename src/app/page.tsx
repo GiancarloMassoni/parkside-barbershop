@@ -22,18 +22,18 @@ function AboveTheFold() {
         alt="Water Tower"
         fill
         priority
-        className="object-cover opacity-90"
+        className="object-cover opacity-60 object-[70%_75%]"
       />
 
       {/* Light control overlays (gradient + vignette) */}
       <div
         aria-hidden
-        className="absolute inset-0 z-10"
+        className="absolute inset-0 z-10 md:hidden"
         style={{
           backgroundImage: `
             linear-gradient(to right,
-              rgba(0,0,0,0.88),
-              rgba(0,0,0,0.60),
+              rgba(0,0,0,0.00),
+              rgba(0,0,0,0.40),
               rgba(0,0,0,0.25)
             ),
             radial-gradient(ellipse at center,
