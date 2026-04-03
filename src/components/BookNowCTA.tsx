@@ -12,7 +12,7 @@ export default function BookNowCTA({ className, text }: BookNowCTAProps) {
   const [open, setOpen] = useState(false);
 
   const bookingUrl =
-    "https://book.squareup.com/appointments/2f58806a-b8b8-4fbc-a253-11852e594ed9/location/AEC220JEJ7A49?buttonTextColor=ffffff&color=000000&locale=en&referrer=so";
+    "https://getsquire.com/booking/book/park-side-barbershop-placentia";
 
   return (
     <>
