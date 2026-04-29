@@ -409,7 +409,7 @@ function AboutUs() {
                   bg-white/10 px-6 py-3
                   text-xs font-semibold uppercase tracking-widest text-zinc-100
                   backdrop-blur
-                  transition hover:bg-white/15 hover:border-white/30
+                  transition hover:bg-white/15 hover:border-white/30 hober:cursor-pointer
             "
                 text="Book with the Owner"
               />
