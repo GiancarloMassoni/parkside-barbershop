@@ -270,7 +270,7 @@ function Exterior() {
             />
           </div>
 
-          <div className="lg:pt-26">
+          <div className="lg:pt-42">
             <p className="mb-4 text-xs uppercase tracking-widest text-zinc-200/80">
               Visit the Shop
             </p>
