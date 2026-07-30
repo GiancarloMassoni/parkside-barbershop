@@ -5,9 +5,11 @@ import { ScissorsIcon } from "@/components/icons/Scissors";
 import { RazorIcon } from "@/components/icons/Razor";
 import { BeardIcon } from "@/components/icons/Beard";
 import { KidsIcon } from "@/components/icons/Kids";
-import exteriorImg from "../../public/barbershop-outside.jpg";
+import exteriorImg from "../../public/barbershop-outside.png";
+import interiorImg from "../../public/barbershop-interior.png";
 import { LocationPin } from "@/components/icons/LocationPin";
 import BookNowCTA from "@/components/BookNowCTA";
+import ImageCarousel from "@/components/ImageCarousel";
 import founderImg from "../../public/maestro.png";
 
 function AboveTheFold() {
@@ -114,13 +116,13 @@ function TrustBar() {
             <span className="hidden sm:inline text-white/15">|</span>
             <span>
               <Link
-                href="https://www.google.com/maps?q=119+Bradford+Ave+%23C,+Placentia,+CA+92870"
+                href="https://www.google.com/maps?q=602+W+Chapman+Ave,+Placentia,+CA+92870"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center hover:text-white transition gap-1"
               >
                 <LocationPin className="h-4 w-4 text-zinc-200/80" />
-                <span>119 Bradford Ave #C, Placentia, CA 92870</span>
+                <span>602 W Chapman Ave, Placentia CA 92870</span>
               </Link>
             </span>
             <span className="hidden sm:inline text-white/15">|</span>
@@ -255,40 +257,20 @@ function Exterior() {
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid items-center gap-14 lg:grid-cols-2">
-          {/* Image */}
-          <div className="relative">
-            <div className="relative aspect-16/14 overflow-hidden rounded-xl border border-white/10 bg-black/40">
-              <Image
-                src={exteriorImg}
-                alt="Park Side Barbershop exterior in Placentia"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-
-              {/* Image overlays for brand consistency */}
-              <div
-                aria-hidden
-                className="absolute inset-0"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.05))",
-                }}
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 opacity-[0.05]"
-                style={{
-                  backgroundImage: "url(/grain.png)",
-                  backgroundRepeat: "repeat",
-                }}
-              />
-            </div>
+        <div className="grid items-start gap-14 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="space-y-6">
+            <ImageCarousel
+              slides={[
+                {
+                  src: exteriorImg,
+                  alt: "Park Side Barbershop exterior in Placentia",
+                },
+                { src: interiorImg, alt: "Park Side Barbershop interior" },
+              ]}
+            />
           </div>
 
-          {/* Text */}
-          <div>
+          <div className="lg:pt-26">
             <p className="mb-4 text-xs uppercase tracking-widest text-zinc-200/80">
               Visit the Shop
             </p>
@@ -297,13 +279,13 @@ function Exterior() {
               Right here in Placentia
             </h2>
             <Link
-              href="https://www.google.com/maps?q=119+Bradford+Ave+%23C,+Placentia,+CA+92870"
+              href="https://www.google.com/maps?q=602+W+Chapman+Ave,+Placentia,+CA+92870"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-sm text-zinc-300 hover:text-white transition mb-6"
             >
               <LocationPin className="h-5 w-5 text-zinc-200/80" />
-              <span>119 Bradford Ave #C, Placentia, CA 92870</span>
+              <span>602 W Chapman Ave, Placentia CA 92870</span>
             </Link>
             <p className="mb-6 text-base leading-relaxed text-zinc-400">
               Park Side Barbershop is proudly located in the heart of Placentia.
@@ -314,7 +296,7 @@ function Exterior() {
 
             <div className="flex flex-wrap items-center gap-6">
               <Link
-                href="https://www.google.com/maps?q=119+Bradford+Ave+%23C,+Placentia,+CA+92870"
+                href="https://www.google.com/maps?q=602+W+Chapman+Ave,+Placentia,+CA+92870"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/10 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-zinc-100 backdrop-blur transition hover:bg-white/15 hover:border-white/30"
