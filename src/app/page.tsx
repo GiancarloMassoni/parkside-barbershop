@@ -1,5 +1,5 @@
 import Image from "next/image";
-import watertower from "../../public/placentia_water_tower.png";
+import watertower from "../../public/placentia_water_tower.jpg";
 import Link from "next/link";
 import { ScissorsIcon } from "@/components/icons/Scissors";
 import { RazorIcon } from "@/components/icons/Razor";
