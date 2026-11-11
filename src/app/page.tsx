@@ -5,12 +5,16 @@ import { ScissorsIcon } from "@/components/icons/Scissors";
 import { RazorIcon } from "@/components/icons/Razor";
 import { BeardIcon } from "@/components/icons/Beard";
 import { KidsIcon } from "@/components/icons/Kids";
-import exteriorImg from "../../public/barbershop-outside.png";
-import interiorImg from "../../public/barbershop-interior.png";
+import exteriorImg from "../../public/entrance.jpeg";
+import interiorImg from "../../public/chair.jpeg";
 import { LocationPin } from "@/components/icons/LocationPin";
 import BookNowCTA from "@/components/BookNowCTA";
 import ImageCarousel from "@/components/ImageCarousel";
 import founderImg from "../../public/maestro.png";
+import product1Img from "../../public/product1.jpeg";
+import product2Img from "../../public/product2.jpeg";
+import product3Img from "../../public/product3.jpeg";
+import product4Img from "../../public/product4.jpeg";
 
 function AboveTheFold() {
   return (
@@ -243,6 +247,92 @@ function Services() {
   );
 }
 
+function Products() {
+  const products = [
+    {
+      name: "Braw Onyx Black Hair Gel",
+      desc: "Strong hold hair gel with color boost. 16oz.",
+      img: product1Img,
+    },
+    {
+      name: "Bravo Matte Volume & Texture Powder",
+      desc: "Strong hold texture powder for natural, matte volume. 1oz.",
+      img: product2Img,
+    },
+    {
+      name: "Braw Hair Gel",
+      desc: "Strong hold hair gel for all-day styling. 16oz.",
+      img: product3Img,
+    },
+    {
+      name: "Kalive Cool Blue",
+      desc: "Firm hold gel for men. No alcohol, no flakes. 16oz.",
+      img: product4Img,
+    },
+  ];
+
+  return (
+    <section
+      id="products"
+      className="relative py-24 bg-[#0b0b0b] font-body text-zinc-300 overflow-hidden"
+    >
+      {/* Grain overlay */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 opacity-[0.05]"
+        style={{
+          backgroundImage: "url(/grain.png)",
+          backgroundRepeat: "repeat",
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+        <p className="mb-4 text-center text-xs uppercase tracking-widest text-zinc-200/80">
+          In the Shop
+        </p>
+        <h2 className="mb-16 text-center text-4xl font-semibold tracking-wide text-zinc-100">
+          Products We Use & Sell
+        </h2>
+
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {products.map((product) => (
+            <div
+              key={product.name}
+              className="
+                rounded-lg
+                border border-white/10
+                bg-black/60
+                overflow-hidden
+                transition
+                hover:border-white/20
+              "
+            >
+              <div className="relative aspect-square w-full bg-zinc-900">
+                <Image
+                  src={product.img}
+                  alt={product.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
+
+              <div className="p-6">
+                <h3 className="mb-2 text-lg font-semibold text-zinc-100">
+                  {product.name}
+                </h3>
+                <p className="text-sm leading-relaxed text-zinc-400">
+                  {product.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Exterior() {
   return (
     <section className="relative bg-[#0e0e0e] py-24 overflow-hidden">
@@ -354,7 +444,7 @@ function AboutUs() {
             <p className="text-base leading-relaxed text-zinc-400">
               Every cut is personal. From clean fades to classic styles, the
               focus is on precision, respect for the craft, and making sure
-              every client leaves feeling confident. No rush, no gimmicks — just
+              every client leaves feeling confident. No rush, no gimmicks just
               solid work from someone who takes pride in where they’re from.
             </p>
 
@@ -448,6 +538,7 @@ export default function Home() {
       <TrustBar />
       <Exterior />
       <Services />
+      <Products />
       <AboutUs />
     </>
   );
