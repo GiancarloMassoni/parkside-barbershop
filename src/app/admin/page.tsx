@@ -9,7 +9,7 @@ export default async function AdminDashboardPage() {
   const posts = await getAllPosts();
 
   return (
-    <main className="min-h-screen bg-black px-6 py-12 font-body lg:px-8">
+    <main className="min-h-screen bg-black px-6 py-12 font-body lg:px-8 pt-32">
       <div className="mx-auto max-w-4xl">
         <div className="mb-10 flex items-center justify-between">
           <h1 className="text-2xl font-semibold tracking-wide text-zinc-100">
